@@ -11,6 +11,6 @@ class Category {
             this.id = uuidv4();
         }
     }
-} 
+}
 
-export { Category }; 
+export { Category }
