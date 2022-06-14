@@ -1,0 +1,8 @@
+cria a migration
+    yarn typeorm migration:create ./src/database/migrations/ < Nome da migration >
+
+roda a migration gerando as tabelas
+    yarn typeorm migration:run
+
+reverte a migration apagando as tabelas
+    yarn typeorm migration:revert
