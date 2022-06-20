@@ -1,22 +1,22 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm";
 
-const dataSource = new DataSource({
+export const dataSource = new DataSource({
     type: "postgres",
     host: "localhost",
     port: 5432,
     username: "docker",
     password: "ignite",
     database: "rentx",
-    synchronize: false,
+    // synchronize: true,
     logging: false,
-    entities: [],
+    entities: ["./src/modules/**/entities/*.ts"],
     migrations: ["./src/database/migrations/*.ts"],
     subscribers: [],
 });
 
-export function createConnection(host = "database"): Promise<DataSource> {
+export function createConnection(host = "localhost"): Promise<DataSource> {
     return dataSource.setOptions({ host }).initialize();
 }
   
-export default dataSource
+// export default dataSource
