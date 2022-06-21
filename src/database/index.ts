@@ -8,7 +8,7 @@ export const dataSource = new DataSource({
     username: "docker",
     password: "ignite",
     database: "rentx",
-    // synchronize: true,
+    synchronize: true,
     logging: false,
     entities: ["./src/modules/**/entities/*.ts"],
     migrations: ["./src/database/migrations/*.ts"],
@@ -18,5 +18,3 @@ export const dataSource = new DataSource({
 export function createConnection(host = "localhost"): Promise<DataSource> {
     return dataSource.setOptions({ host }).initialize();
 }
-  
-// export default dataSource

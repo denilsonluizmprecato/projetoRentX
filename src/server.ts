@@ -7,6 +7,8 @@ import "./database/index";
 
 import { createConnection } from "./database/index";
 
+import "./shared/container"
+
 createConnection('localhost');
 
 const app = express();
