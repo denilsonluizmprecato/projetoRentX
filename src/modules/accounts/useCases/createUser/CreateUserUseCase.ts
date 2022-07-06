@@ -3,12 +3,13 @@ import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { UsersRepository } from "../../repositories/implementations/UsersRepository";
 import { hash } from "bcrypt";
 import { AppError } from "../../../../errors/AppError";
+import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 @injectable()
 class CreateUserUseCase {
     constructor(
         @inject("UsersRepository")
-        private usersRepository: UsersRepository) {};
+        private usersRepository: IUsersRepository) {};
 
     async execute({name, username, email, driver_license, password}: ICreateUserDTO): Promise<void> {
         const userAlreadyExists = await this.usersRepository.findByEmail(email);
