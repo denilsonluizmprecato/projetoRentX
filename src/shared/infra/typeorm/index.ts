@@ -6,12 +6,13 @@ export const dataSource = new DataSource({
     host: "localhost",
     port: 5432,
     username: "docker",
+    schema:"public",
     password: "ignite",
     database: "rentx",
     synchronize: false,
     logging: false,
-    entities: ["./src/modules/**/entities/*.ts"],
-    migrations: ["./src/database/migrations/*.ts"],
+    entities: ["./src/modules/**/infra/typeorm/entities/*.ts"],
+    migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
     subscribers: [],
 });
 
