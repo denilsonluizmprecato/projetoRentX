@@ -1,5 +1,5 @@
 cria a migration
-    yarn typeorm migration:create ./src/database/migrations/ < Nome da migration >
+    yarn typeorm migration:create src/shared/infra/typeorm/migrations/ < Nome da migration >
 
 roda a migration gerando as tabelas
     yarn typeorm migration:run
