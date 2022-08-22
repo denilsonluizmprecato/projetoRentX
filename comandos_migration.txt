@@ -6,3 +6,6 @@ roda a migration gerando as tabelas
 
 reverte a migration apagando as tabelas
     yarn typeorm migration:revert
+
+"typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+"typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/shared/infra/typeorm/index.ts",
