@@ -1,5 +1,5 @@
-import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
-import { AppError } from "@shared/errors/AppError";
+import { ICarsRepository } from "../../../../../src/modules/cars/repositories/ICarsRepository";
+import { AppError } from "../../../../../src/shared/errors/AppError";
 import { inject } from "tsyringe";
 
 interface IRequest {
@@ -10,7 +10,7 @@ interface IRequest {
 class CreateCarSpecificationUseCase {
 
     constructor(
-        // @inject("CArsRepository")
+        // @inject("CarsRepository")
         private carsRepository: ICarsRepository
     ) {}
 
@@ -21,6 +21,7 @@ class CreateCarSpecificationUseCase {
         if(!carExists) {
             throw new AppError("Car Does Not Exists!");
         }
+
     }
 }
 
