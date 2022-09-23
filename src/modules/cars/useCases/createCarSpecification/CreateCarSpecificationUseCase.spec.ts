@@ -8,6 +8,8 @@ let carsRepositoryInMemory: CarsRepositoryInMemory;
 describe("Create Car Specification", () => {
 
     beforeEach(() => {
+        // instanciar classes antes dos testes
+        // instancias poderão ser usadas em todos os 'it'
         carsRepositoryInMemory = new CarsRepositoryInMemory();
         createCarSpecificationUseCase = new CreateCarSpecificationUseCase(carsRepositoryInMemory);
 
